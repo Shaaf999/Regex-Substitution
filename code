@@ -1,0 +1,14 @@
+n=int(input())
+import re 
+for i in range(n):
+    regex_package= r'(?<= )(&&|\|\|)(?= )'
+    replacement = lambda x: 'and' if x.group()=='&&' else 'or'
+    s=input()
+    print(re.sub(regex_package, replacement,s))
+
+# same method in short code
+
+
+import re
+for i in range (int(input())):
+    print(re.sub(r'(?<= )(&&|\|\|)(?= )',lambda x: 'and' if x.group()=='&&' else 'or',input()))
