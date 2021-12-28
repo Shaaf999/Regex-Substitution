@@ -12,3 +12,17 @@ for i in range(n):
 import re
 for i in range (int(input())):
     print(re.sub(r'(?<= )(&&|\|\|)(?= )',lambda x: 'and' if x.group()=='&&' else 'or',input()))
+    
+    
+ #method 2 
+    import re
+
+def change(match):
+    if match.group(1) == '&&':
+        return 'and'
+    else:
+        return 'or'
+
+for _ in range(int(input())):
+    print(re.sub(r"(?<= )(\|\||&&)(?= )", change,input()))
+    
